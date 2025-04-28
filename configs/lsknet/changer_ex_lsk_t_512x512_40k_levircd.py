@@ -25,7 +25,7 @@ data_preprocessor = dict(
     ],
     test_cfg=dict(size_divisor=32),
     type='DualInputSegDataPreProcessor')
-data_root = 'data/LEVIR_CD/'
+data_root = 'data/LEVIR-CD/'
 dataset_type = 'LEVIR_CD_Dataset'
 default_hooks = dict(
     checkpoint=dict(
@@ -161,7 +161,7 @@ test_dataloader = dict(
             img_path_from='test/A',
             img_path_to='test/B',
             seg_map_path='test/label'),
-        data_root='data/LEVIR_CD/',
+        data_root='data/LEVIR-CD/',
         pipeline=[
             dict(type='MultiImgLoadImageFromFile'),
             dict(keep_ratio=True, scale=(
@@ -197,7 +197,7 @@ train_dataloader = dict(
             img_path_from='train/A',
             img_path_to='train/B',
             seg_map_path='train/label'),
-        data_root='data/LEVIR_CD/',
+        data_root='data/LEVIR-CD/',
         pipeline=[
             dict(type='MultiImgLoadImageFromFile'),
             dict(type='MultiImgLoadAnnotations'),
@@ -305,7 +305,7 @@ val_dataloader = dict(
             img_path_from='test/A',
             img_path_to='test/B',
             seg_map_path='test/label'),
-        data_root='data/LEVIR_CD/',
+        data_root='data/LEVIR-CD/',
         pipeline=[
             dict(type='MultiImgLoadImageFromFile'),
             dict(keep_ratio=True, scale=(
